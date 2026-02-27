@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+# ~/tools/StankyDanko/src/App.tsx
+import { useState, useEffect, useRef, FormEvent } from 'react';
 
 // ==========================================
 // 🌿 STANKYDANKO'S SYNTHWAVE STYLES
@@ -135,7 +136,7 @@ const TIMELINE = [
 // 🌿 SUB-COMPONENTS
 // ==========================================
 
-const NavBar = ({ scrolled }) => (
+const NavBar = ({ scrolled }: { scrolled: boolean }) => (
   <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? 'bg-[#0A0710]/90 backdrop-blur-xl border-b border-cyan-500/20 py-4 shadow-[0_10px_30px_rgba(0,0,0,0.8)]' : 'bg-transparent py-8'}`}>
     <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
       <a href="#" className="flex items-center gap-3 cursor-pointer group">
@@ -171,7 +172,7 @@ const NavBar = ({ scrolled }) => (
 );
 
 const ProjectsSection = () => {
-  const featured = PROJECTS.find(p => p.featured);
+  const featured = PROJECTS.find(p => p.featured) || PROJECTS[0];
   const others = PROJECTS.filter(p => !p.featured);
 
   return (
@@ -357,9 +358,9 @@ const TerminalSection = () => {
   ]);
   
   // Reference the scrollable div directly instead of an anchor element
-  const terminalBodyRef = useRef(null);
+  const terminalBodyRef = useRef<HTMLDivElement>(null);
 
-  const handleCommand = (e) => {
+  const handleCommand = (e: FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
     
