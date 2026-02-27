@@ -1,0 +1,323 @@
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+
+// --- Custom Hook: Mouse Parallax ---
+const useMousePosition = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  useEffect(() => {
+    const updateMousePosition = (ev: MouseEvent) => {
+      const x = (ev.clientX / window.innerWidth) * 2 - 1;
+      const y = (ev.clientY / window.innerHeight) * 2 - 1;
+      setMousePosition({ x, y });
+    };
+    window.addEventListener('mousemove', updateMousePosition);
+    return () => window.removeEventListener('mousemove', updateMousePosition);
+  }, []);
+  return mousePosition;
+};
+
+// --- Navigation ---
+const Navigation = () => (
+  <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full backdrop-blur-md bg-zinc-950/70 border-b border-emerald-500/10">
+    <div className="flex items-center gap-3 cursor-pointer group">
+      <motion.div 
+        className="w-9 h-9 rounded-2xl bg-gradient-to-br from-emerald-500 to-lime-400 flex items-center justify-center shadow-[0_0_20px_rgba(16,185,129,0.6)] group-hover:shadow-[0_0_35px_rgba(16,185,129,0.9)] transition-all"
+        whileHover={{ rotate: [0, -8, 8, 0] }}
+      >
+        <span className="text-2xl">🌿</span>
+      </motion.div>
+      <div>
+        <span className="text-2xl font-black tracking-tighter text-white">STANKY</span>
+        <span className="text-2xl font-light tracking-widest text-emerald-400">DANKO</span>
+      </div>
+    </div>
+
+    <div className="hidden md:flex items-center gap-10 text-sm font-medium text-emerald-100/80">
+      <a href="#hero" className="hover:text-lime-300 transition-colors">Home</a>
+      <a href="#about" className="hover:text-lime-300 transition-colors">The Haze</a>
+      <a href="#portfolio" className="hover:text-lime-300 transition-colors">Dank Vault</a>
+      <a href="#contact" className="hover:text-lime-300 transition-colors">Link Up</a>
+    </div>
+
+    <motion.a 
+      href="https://x.com/stankydanko"
+      target="_blank"
+      className="px-6 py-2.5 rounded-full border border-emerald-400/30 hover:border-emerald-400/80 text-emerald-100 text-sm font-medium backdrop-blur-md hover:bg-emerald-500/10 transition-all"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      Hit the X → 
+    </motion.a>
+  </nav>
+);
+
+// --- Animated Dank Hero SVG (Mouse Parallax + Floating Nodes + Smoke Paths) ---
+const AnimatedHeroSVG = () => {
+  const { x, y } = useMousePosition();
+
+  const nodes = [
+    { cx: 180, cy: 140, r: 7, delay: '0s', type: 'leaf' },
+    { cx: 620, cy: 110, r: 9, delay: '0.8s', type: 'eye' },
+    { cx: 380, cy: 280, r: 11, delay: '0.4s', type: 'peach' },
+    { cx: 120, cy: 420, r: 6, delay: '1.2s', type: 'leaf' },
+    { cx: 680, cy: 380, r: 8, delay: '0.6s', type: 'eye' },
+    { cx: 480, cy: 520, r: 10, delay: '1.6s', type: 'peach' },
+  ];
+
+  const smokePaths = [
+    { d: "M180 140 Q300 200 380 280", length: 320 },
+    { d: "M620 110 Q520 220 380 280", length: 340 },
+    { d: "M380 280 Q220 340 120 420", length: 380 },
+    { d: "M380 280 Q550 340 680 380", length: 360 },
+    { d: "M120 420 Q280 480 480 520", length: 410 },
+    { d: "M680 380 Q580 460 480 520", length: 290 },
+  ];
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 flex items-center justify-center opacity-75 mix-blend-screen">
+      <svg
+        viewBox="0 0 800 700"
+        className="w-[130%] h-[130%] md:w-full md:h-full max-w-5xl"
+        style={{
+          transform: `translate(${x * -28}px, ${y * -28}px)`,
+          transition: 'transform 0.45s cubic-bezier(0.23,1,0.32,1)'
+        }}
+      >
+        <defs>
+          <filter id="dankglow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+
+          <linearGradient id="smokeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#10B981" stopOpacity="0.15"/>
+            <stop offset="50%" stopColor="#6D28D9" stopOpacity="0.65"/>
+            <stop offset="100%" stopColor="#10B981" stopOpacity="0.15"/>
+          </linearGradient>
+        </defs>
+
+        {/* Slow Orbiting Haze Rings */}
+        <g className="origin-center" style={{ transformOrigin: '400px 350px' }}>
+          <circle cx="400" cy="350" r="310" fill="none" stroke="rgba(16,185,129,0.08)" strokeWidth="2" strokeDasharray="8 18" className="animate-[spin_65s_linear_infinite]"/>
+          <circle cx="400" cy="350" r="210" fill="none" stroke="rgba(109,40,217,0.12)" strokeWidth="1.5" strokeDasharray="12 24" className="animate-[spin_85s_linear_infinite_reverse]"/>
+        </g>
+
+        {/* Wavy Smoke Trails */}
+        {smokePaths.map((p, i) => (
+          <path
+            key={i}
+            d={p.d}
+            fill="none"
+            stroke="url(#smokeGrad)"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            style={{
+              strokeDasharray: p.length,
+              strokeDashoffset: p.length,
+              animation: `draw ${3.5 + i * 0.4}s ease-in-out infinite alternate`,
+              animationDelay: `${i * 0.25}s`
+            }}
+          />
+        ))}
+
+        {/* Floating Dank Nodes */}
+        {nodes.map((node, i) => (
+          <g key={i} className={`animate-float-${i % 2 === 0 ? '1' : '2'}`} style={{ animationDelay: node.delay }}>
+            {node.type === 'leaf' && (
+              <>
+                <circle cx={node.cx} cy={node.cy} r={node.r + 5} fill="#10B981" opacity="0.25" filter="url(#dankglow)"/>
+                <path d={`M${node.cx} ${node.cy - 12} Q${node.cx - 14} ${node.cy - 8} ${node.cx - 11} ${node.cy + 6} Q${node.cx} ${node.cy + 14} ${node.cx + 11} ${node.cy + 6} Q${node.cx + 14} ${node.cy - 8} ${node.cx} ${node.cy - 12}`} fill="#10B981" filter="url(#dankglow)"/>
+              </>
+            )}
+            {node.type === 'eye' && (
+              <>
+                <circle cx={node.cx} cy={node.cy} r={node.r + 4} fill="#111827" filter="url(#dankglow)"/>
+                <circle cx={node.cx - 3} cy={node.cy - 2} r="3" fill="#fff"/>
+              </>
+            )}
+            {node.type === 'peach' && (
+              <circle cx={node.cx} cy={node.cy} r={node.r} fill="#F59E0B" filter="url(#dankglow)" stroke="#10B981" strokeWidth="2"/>
+            )}
+          </g>
+        ))}
+      </svg>
+    </div>
+  );
+};
+
+// --- Feature Card ---
+const FeatureCard = ({ title, description, icon, delay }: { title: string; description: string; icon: React.ReactNode; delay: string }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 60 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: parseFloat(delay) }}
+    className="relative group p-8 rounded-3xl bg-zinc-900/60 border border-emerald-500/10 hover:border-emerald-400/40 backdrop-blur-xl transition-all duration-500 overflow-hidden"
+  >
+    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+    
+    <div className="relative z-10">
+      <div className="w-16 h-16 rounded-2xl bg-zinc-950/80 border border-emerald-400/20 flex items-center justify-center mb-8 group-hover:rotate-6 group-hover:scale-110 transition-transform">
+        {icon}
+      </div>
+      <h3 className="text-2xl font-bold text-white tracking-tight mb-4">{title}</h3>
+      <p className="text-emerald-100/70 leading-relaxed">{description}</p>
+    </div>
+  </motion.div>
+);
+
+export default function StankyHub() {
+  return (
+    <div className="min-h-screen bg-zinc-950 font-sans text-emerald-50 overflow-x-hidden relative flex flex-col">
+      {/* Global Dank Animations */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes draw {
+            0% { stroke-dashoffset: 800; opacity: 0.2; }
+            50% { opacity: 0.85; }
+            100% { stroke-dashoffset: 0; opacity: 0.7; }
+          }
+          @keyframes float-1 {
+            0%,100% { transform: translate(0,0) rotate(0deg); }
+            50% { transform: translate(14px,-22px) rotate(6deg); }
+          }
+          @keyframes float-2 {
+            0%,100% { transform: translate(0,0) rotate(0deg); }
+            50% { transform: translate(-18px,16px) rotate(-8deg); }
+          }
+          .animate-float-1 { animation: float-1 7s ease-in-out infinite; }
+          .animate-float-2 { animation: float-2 9s ease-in-out infinite; }
+        `
+      }} />
+
+      {/* Hazy Background Orbs */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-emerald-600/20 rounded-full mix-blend-screen blur-[140px] animate-[blob_22s_infinite]" />
+        <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-purple-600/20 rounded-full mix-blend-screen blur-[160px] animate-[blob_28s_infinite_4s]" />
+      </div>
+
+      <Navigation />
+
+      {/* HERO */}
+      <section id="hero" className="flex-grow flex items-center justify-center relative min-h-screen pt-20">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 px-8 items-center">
+          {/* Left Content */}
+          <div className="space-y-10 z-20">
+            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 text-xs uppercase tracking-[3px] font-mono">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-lime-400" />
+              </span>
+              Barnesville, GA • Est. 2026
+            </div>
+
+            <h1 className="text-6xl md:text-7xl font-black tracking-[-3px] leading-none">
+              GET<br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-lime-300 to-purple-400">STANKY</span>
+            </h1>
+
+            <p className="text-2xl md:text-3xl font-light text-emerald-100/80 max-w-lg">
+              High-Tech Botany &amp; Dank Code from the Georgia Pines
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <motion.a 
+                href="#about"
+                className="px-10 py-5 rounded-2xl bg-gradient-to-r from-emerald-500 to-lime-400 text-zinc-950 font-bold text-lg flex items-center justify-center gap-3 hover:shadow-2xl hover:shadow-emerald-500/50 transition-all"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                Enter the Haze
+                <span className="text-xl">🌫️</span>
+              </motion.a>
+              <motion.a 
+                href="#portfolio"
+                className="px-10 py-5 rounded-2xl border border-emerald-400/40 hover:border-emerald-400 text-emerald-100 font-medium flex items-center justify-center gap-3 backdrop-blur-md transition-all"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                Explore the Vault
+              </motion.a>
+            </div>
+          </div>
+
+          {/* Right SVG Area */}
+          <div className="relative h-[520px] md:h-[680px] hidden lg:block">
+            <AnimatedHeroSVG />
+          </div>
+        </div>
+      </section>
+
+      {/* About / The Haze */}
+      <section id="about" className="py-24 px-8 bg-zinc-900/60">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-5xl font-bold mb-6">The Stanky Story</h2>
+          <p className="text-xl text-emerald-100/70 leading-relaxed">
+            From the red clay of Barnesville to the glowing pixels of the internet.<br />
+            Danko grows code like he grows herbs — slow, intentional, and always dank.
+          </p>
+        </div>
+      </section>
+
+      {/* Features / Dank Vault Preview */}
+      <section id="portfolio" className="px-8 py-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-black tracking-tight">The Dank Vault</h2>
+            <p className="text-emerald-400 mt-3">Where the good shit lives</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <FeatureCard
+              delay="0"
+              title="Living SVG Animations"
+              description="Every leaf, goggle, and grin breathes. Hover, tap, watch the haze roll in."
+              icon={<span className="text-4xl">🍃</span>}
+            />
+            <FeatureCard
+              delay="0.1"
+              title="Georgia Meme Forge"
+              description="Memes so stanky they make the internet blush. Built with love and lighter fluid."
+              icon={<span className="text-4xl">😂</span>}
+            />
+            <FeatureCard
+              delay="0.2"
+              title="High-Tech Botany"
+              description="React + Framer + Tailwind = code that grows wild and stays forever fresh."
+              icon={<span className="text-4xl">💾</span>}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-24 px-8 bg-gradient-to-b from-zinc-950 to-black">
+        <div className="max-w-md mx-auto text-center">
+          <h2 className="text-5xl font-black mb-8">Stay Dank</h2>
+          <a 
+            href="https://x.com/stankydanko"
+            target="_blank"
+            className="inline-block px-12 py-6 rounded-3xl bg-white text-zinc-950 font-bold text-xl hover:scale-105 active:scale-95 transition-all"
+          >
+            Slide into the DMs on X
+          </a>
+          <p className="mt-8 text-emerald-400/60">or just smoke one for me in Barnesville</p>
+        </div>
+      </section>
+
+      {/* Footer Wave */}
+      <div className="relative h-48 overflow-hidden">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="absolute bottom-0 w-full h-full">
+          <path 
+            d="M0 80 Q300 30 600 80 Q900 130 1200 80 L1200 120 L0 120 Z" 
+            fill="#052E16"
+            className="opacity-80"
+          />
+        </svg>
+      </div>
+    </div>
+  );
+}
