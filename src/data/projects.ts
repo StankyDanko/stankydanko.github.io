@@ -43,8 +43,8 @@ export const headliners: HeadlinerProject[] = [
   {
     id: 'zenotype',
     title: 'ZENOTYPE',
-    subtitle: 'AI Typing Coach — The Cultural Uplink (v0.7.2)',
-    description: 'Terminal-inspired typing coach powered by local AI. Real-time keystroke analytics, keyboard heatmaps, adaptive difficulty, gamified flow states, and Scripture mode. Ollama generates infinite practice text tuned to your weak spots.',
+    subtitle: 'AI Typing Coach (v0.8.0)',
+    description: 'Terminal-inspired typing coach powered by remote AI. Ollama generates infinite educational text on any topic — real-time keystroke analytics, keyboard heatmaps, adaptive difficulty, gamified flow states, and Scripture mode.',
     color: '#9333EA',
     tags: ['LIVE', 'AI', 'Ollama', 'React'],
     links: [
