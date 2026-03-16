@@ -72,14 +72,15 @@ export function useAudioPlayer(): AudioPlayerState & AudioPlayerControls {
     if (!audio) return
 
     const wasPlaying = isPlayingRef.current
+
+    // Reset time/duration via audio element — timeupdate/durationchange handlers will sync state
     audio.src = tracks[trackIndex].file
+    audio.currentTime = 0
     audio.load()
-    setCurrentTime(0)
-    setDuration(0)
 
     if (wasPlaying) {
       audio.play().catch(() => {
-        setIsPlaying(false)
+        // Browser may block autoplay
       })
     }
   }, [trackIndex])
