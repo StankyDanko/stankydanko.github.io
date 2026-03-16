@@ -3,6 +3,7 @@ import { Hero } from './components/Hero'
 import { HeadlinerCard } from './components/Headliners/HeadlinerCard'
 import { NaptimesOverContent } from './components/Headliners/NaptimesOver'
 import { OmniContent } from './components/Headliners/OmniCard'
+import { ZenoTypeDemo } from './components/Headliners/ZenoTypeDemo'
 import { Garden } from './components/Garden'
 import { About } from './components/About'
 import { AlbumPlayer } from './components/AlbumPlayer'
@@ -39,7 +40,9 @@ export default function App() {
             <OmniContent />
           </HeadlinerCard>
 
-          <HeadlinerCard project={zenotype} />
+          <HeadlinerCard project={zenotype}>
+            <ZenoTypeDemo />
+          </HeadlinerCard>
         </section>
       </div>
 
