@@ -185,6 +185,8 @@ export function ZenoTypeDemo() {
   return (
     <div
       ref={containerRef}
+      role="presentation"
+      aria-hidden="true"
       className="relative w-full aspect-video rounded-lg border border-slate-800 bg-[#090e17] overflow-hidden select-none"
     >
       {/* Neural thread label */}
