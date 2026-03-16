@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Leaf outline -->
+  <path d="M16 2C10 2 4 8 4 16c0 6 4 12 12 14 8-2 12-8 12-14C28 8 22 2 16 2z"
+        stroke="#4ADE80" stroke-width="1.5" fill="#4ADE8015"/>
+  <!-- Central vein (circuit trace) -->
+  <line x1="16" y1="6" x2="16" y2="26" stroke="#4ADE80" stroke-width="1.5"/>
+  <!-- Circuit branch veins -->
+  <path d="M16 10 L10 14 M16 10 L22 14" stroke="#4ADE80" stroke-width="1" stroke-linecap="round"/>
+  <path d="M16 16 L9 19 M16 16 L23 19" stroke="#4ADE80" stroke-width="1" stroke-linecap="round"/>
+  <path d="M16 21 L11 23 M16 21 L21 23" stroke="#4ADE80" stroke-width="1" stroke-linecap="round"/>
+  <!-- Circuit nodes (solder points) -->
+  <circle cx="10" cy="14" r="1.2" fill="#4ADE80"/>
+  <circle cx="22" cy="14" r="1.2" fill="#4ADE80"/>
+  <circle cx="9" cy="19" r="1.2" fill="#4ADE80"/>
+  <circle cx="23" cy="19" r="1.2" fill="#4ADE80"/>
+  <circle cx="16" cy="6" r="1.5" fill="#4ADE80"/>
+</svg>
