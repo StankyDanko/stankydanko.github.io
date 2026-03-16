@@ -43,10 +43,14 @@ export const headliners: HeadlinerProject[] = [
   {
     id: 'zenotype',
     title: 'ZENOTYPE',
-    subtitle: 'AI Typing Coach — The Cultural Uplink (v0.7)',
-    description: 'Terminal-inspired typing coach powered by local AI. Real-time keystroke analytics, keyboard heatmaps, adaptive difficulty, gamified flow states. Ollama generates infinite practice text tuned to your weak spots.',
+    subtitle: 'AI Typing Coach — The Cultural Uplink (v0.7.2)',
+    description: 'Terminal-inspired typing coach powered by local AI. Real-time keystroke analytics, keyboard heatmaps, adaptive difficulty, gamified flow states, and Scripture mode. Ollama generates infinite practice text tuned to your weak spots.',
     color: '#9333EA',
-    tags: ['AI', 'Ollama', 'React'],
+    tags: ['LIVE', 'AI', 'Ollama', 'React'],
+    links: [
+      { label: 'LAUNCH ZENOTYPE →', url: 'https://stankydanko.github.io/ZenoType/', primary: true },
+      { label: 'GitHub', url: 'https://github.com/StankyDanko/ZenoType' },
+    ],
   },
 ]
 
