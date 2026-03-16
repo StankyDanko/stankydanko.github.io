@@ -257,22 +257,23 @@ export default function MyceliumNetwork() {
     // Audio waveforms along the bottom that morph organically
 
     const tendrils: WaveTendril[] = []
-    for (let i = 0; i < 4; i++) {
+    const tendrilColors = [pickGreen(), pickGreen(), pickCyan(), pickPurple(), pickGreen(), pickPurple(), pickCyan()]
+    for (let i = 0; i < 7; i++) {
       const branchPts: number[] = []
-      const numBranches = 2 + Math.floor(Math.random() * 3)
+      const numBranches = 2 + Math.floor(Math.random() * 4)
       for (let b = 0; b < numBranches; b++) {
-        branchPts.push(0.2 + Math.random() * 0.6)
+        branchPts.push(0.1 + Math.random() * 0.8)
       }
 
       tendrils.push({
-        baseY: H - 30 - i * 18,
-        amplitude: 8 + Math.random() * 15,
-        frequency: 0.003 + Math.random() * 0.004,
+        baseY: H - 20 - i * 14,
+        amplitude: 12 + Math.random() * 22,
+        frequency: 0.002 + Math.random() * 0.005,
         phase: Math.random() * Math.PI * 2,
-        phaseSpeed: 0.008 + Math.random() * 0.006,
-        color: i < 2 ? pickGreen() : pickPurple(),
-        opacity: 0.08 + i * 0.04,
-        width: 0.8 + Math.random() * 0.6,
+        phaseSpeed: 0.006 + Math.random() * 0.008,
+        color: tendrilColors[i],
+        opacity: 0.06 + i * 0.035,
+        width: 0.8 + Math.random() * 1.0,
         xStart: 0,
         xEnd: W,
         branchPoints: branchPts,
@@ -585,7 +586,7 @@ export default function MyceliumNetwork() {
       resize()
       circuits = createCircuitTraces()
       for (const t of tendrils) {
-        t.baseY = H - 30 - tendrils.indexOf(t) * 18
+        t.baseY = H - 20 - tendrils.indexOf(t) * 14
       }
     }
     window.removeEventListener('resize', resize) // remove the simple one
