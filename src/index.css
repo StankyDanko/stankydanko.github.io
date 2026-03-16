@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brand-dark text-brand-text font-mono antialiased;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #9333EA #0A0710;
+  }
+}
