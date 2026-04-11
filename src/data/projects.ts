@@ -65,6 +65,15 @@ export const headliners: HeadlinerProject[] = [
     media: { type: 'image', src: '/images/southernsky-chat-hero.png', alt: 'SouthernSky Chat — AI agent grid interface' },
   },
   {
+    id: 'cairn',
+    title: 'CAIRN',
+    subtitle: 'Whisper for Ambient Sound',
+    description: 'Takes raw audio and produces timestamped JSON sidecars of environmental sounds — rain, wind, birds, footsteps, machinery, silence. Three-layer architecture: fast local inference, open-vocabulary zero-shot classification, and AI enrichment. Born on a grounding walk through the Georgia woods. Makes 300GB of field recordings searchable by what they sound like.',
+    color: '#8B5CF6',
+    tags: ['PRE-ALPHA', 'Python', 'Audio AI'],
+    media: { type: 'image', src: '/images/cairn-hero.png', alt: 'Cairn — violet sound waves rippling through a dark forest' },
+  },
+  {
     id: 'justin-context',
     title: 'JUSTIN CONTEXT',
     subtitle: 'Interactive AI Documentary',
@@ -89,7 +98,6 @@ export const headliners: HeadlinerProject[] = [
 
 export const gardenProjects: GardenProject[] = [
   { id: 'southernsky',  title: 'SouthernSky',          description: 'Cloud platform, customer portal & intelligent software suite', color: '#3fb950', url: 'https://southernsky.cloud' },
-  { id: 'cairn',        title: 'Cairn',                 description: 'Whisper for ambient sound — timestamped environmental audio tagging (coming soon)', color: '#8B5CF6' },
   { id: 'market-data',  title: 'Market Data Service',   description: 'Market sentiment API, newsletter engine & signal feed',        color: '#EF4444' },
   { id: 'starcatcher',  title: 'Star Catcher',          description: 'Web game — cosmic leap (WIP)',                                 color: '#06B6D4', url: 'https://stankydanko.github.io/star-catcher' },
   { id: 'video-fx',     title: 'video-fx',              description: 'Selective face recognition + privacy blurring pipeline',        color: '#EC4899' },

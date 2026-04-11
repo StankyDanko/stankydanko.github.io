@@ -19,8 +19,9 @@ export default function App() {
   const omni = headliners[1]
   const saysee = headliners[2]
   const southernskyChat = headliners[3]
-  const justinContext = headliners[4]
-  const zenotype = headliners[5]
+  const cairn = headliners[4]
+  const justinContext = headliners[5]
+  const zenotype = headliners[6]
 
   return (
     <div className="min-h-screen pb-16">
@@ -46,6 +47,8 @@ export default function App() {
           <HeadlinerCard project={saysee} />
 
           <HeadlinerCard project={southernskyChat} />
+
+          <HeadlinerCard project={cairn} />
 
           <HeadlinerCard project={justinContext} />
 
