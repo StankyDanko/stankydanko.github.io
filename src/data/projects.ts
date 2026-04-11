@@ -71,6 +71,9 @@ export const headliners: HeadlinerProject[] = [
     description: 'Takes raw audio and produces timestamped JSON sidecars of environmental sounds — rain, wind, birds, footsteps, machinery, silence. Three-layer architecture: fast local inference, open-vocabulary zero-shot classification, and AI enrichment. Born on a grounding walk through the Georgia woods. Makes 300GB of field recordings searchable by what they sound like.',
     color: '#8B5CF6',
     tags: ['PRE-ALPHA', 'Python', 'Audio AI'],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/StankyDanko/cairn', primary: true },
+    ],
     media: { type: 'image', src: '/images/cairn-hero.png', alt: 'Cairn — violet sound waves rippling through a dark forest' },
   },
   {
@@ -80,6 +83,9 @@ export const headliners: HeadlinerProject[] = [
     description: 'You\'ve never seen a movie like this before. An interactive documentary where a conversational AI narrates the story, pulling real footage as evidence. The viewer sits with the agent and asks questions. Built on a personal archive of thousands of hours of video, audio, and text — indexed by custom tools, searched by meaning, presented as narrative.',
     color: '#f59e0b',
     tags: ['IN DEV', 'AI', 'Documentary'],
+    links: [
+      { label: 'JUSTINCONTEXT.IO →', url: 'https://justincontext.io', primary: true },
+    ],
     media: { type: 'image', src: '/images/justin-context-hero.png', alt: 'JustIn Context — documentary film strips in amber light' },
   },
   {
