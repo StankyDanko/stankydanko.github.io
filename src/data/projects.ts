@@ -50,6 +50,7 @@ export const headliners: HeadlinerProject[] = [
     links: [
       { label: 'GitHub', url: 'https://github.com/StankyDanko/saysee', primary: true },
     ],
+    media: { type: 'image', src: '/images/saysee-hero.png', alt: 'SaySee — eye and waveform visualization' },
   },
   {
     id: 'southernsky-chat',
@@ -61,6 +62,7 @@ export const headliners: HeadlinerProject[] = [
     links: [
       { label: 'EXPLORE →', url: 'https://chat.southernsky.cloud', primary: true },
     ],
+    media: { type: 'image', src: '/images/southernsky-chat-hero.png', alt: 'SouthernSky Chat — AI agent grid interface' },
   },
   {
     id: 'justin-context',
@@ -69,6 +71,7 @@ export const headliners: HeadlinerProject[] = [
     description: 'You\'ve never seen a movie like this before. An interactive documentary where a conversational AI narrates the story, pulling real footage as evidence. The viewer sits with the agent and asks questions. Built on a personal archive of thousands of hours of video, audio, and text — indexed by custom tools, searched by meaning, presented as narrative.',
     color: '#f59e0b',
     tags: ['IN DEV', 'AI', 'Documentary'],
+    media: { type: 'image', src: '/images/justin-context-hero.png', alt: 'JustIn Context — documentary film strips in amber light' },
   },
   {
     id: 'zenotype',

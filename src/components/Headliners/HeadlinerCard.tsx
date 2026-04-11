@@ -45,6 +45,28 @@ export function HeadlinerCard({ project, children }: Props) {
         {project.description}
       </p>
 
+      {/* Media (image or video) */}
+      {!children && project.media && (
+        <div className="rounded-md overflow-hidden border border-white/5 mb-4">
+          {project.media.type === 'video' ? (
+            <video
+              src={project.media.src}
+              controls
+              preload="none"
+              className="w-full aspect-video"
+              aria-label={project.media.alt}
+            />
+          ) : (
+            <img
+              src={project.media.src}
+              alt={project.media.alt}
+              className="w-full"
+              loading="lazy"
+            />
+          )}
+        </div>
+      )}
+
       {/* Slot for project-specific content */}
       {children}
 
