@@ -17,7 +17,10 @@ export default function App() {
 
   const naptimesOver = headliners[0]
   const omni = headliners[1]
-  const zenotype = headliners[2]
+  const saysee = headliners[2]
+  const southernskyChat = headliners[3]
+  const justinContext = headliners[4]
+  const zenotype = headliners[5]
 
   return (
     <div className="min-h-screen pb-16">
@@ -39,6 +42,12 @@ export default function App() {
           <HeadlinerCard project={omni}>
             <OmniContent />
           </HeadlinerCard>
+
+          <HeadlinerCard project={saysee} />
+
+          <HeadlinerCard project={southernskyChat} />
+
+          <HeadlinerCard project={justinContext} />
 
           <HeadlinerCard project={zenotype}>
             <ZenoTypeDemo />

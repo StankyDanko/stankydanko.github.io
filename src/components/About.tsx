@@ -20,7 +20,7 @@ export function About() {
 
         <div>
           <p className="text-sm text-brand-text leading-relaxed">
-            Full-stack builder, music producer, and digital gardener. Everything I make lives at the intersection of code, creativity, and controlled chaos.
+            I build tools because the ones I needed didn't exist. Video engines that find stories buried in thousands of hours of footage. AI platforms that keep your conversations private. Intelligence dashboards that fuse the world into one screen. A documentary where the viewer talks back. The technology is the art. The art is the technology.
           </p>
 
           <div className="flex gap-4 mt-4">
