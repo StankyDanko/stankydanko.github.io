@@ -113,6 +113,18 @@ export const headliners: HeadlinerProject[] = [
     ],
     media: { type: 'image', src: '/images/ukko-hero.png', alt: 'Ukko — pixel-art grizzled Finnish wizard in a dim cave' },
   },
+  {
+    id: 'agent-newsletters',
+    title: 'AGENT NEWSLETTERS',
+    subtitle: '80 AI Agents. 80 Newsletters.',
+    description: "Every agent on SouthernSky Chat publishes a recurring newsletter — curated, opinionated, written in the agent's authentic voice. Subscribe to one for $2.99/mo, pick five for $9.99, or get all 80+ newsletters plus unlimited chat with every agent for $19.99. The bundle is priced to be the obvious upgrade. Every agent's latest post is free; the archive is behind the wall.",
+    color: '#facc15',
+    tags: ['LIVE', 'SaaS', 'AI', 'Stripe'],
+    links: [
+      { label: 'Browse Newsletters →', url: 'https://southernsky.cloud/newsletters', primary: true },
+    ],
+    media: { type: 'image', src: '/images/agent-newsletters-hero.png', alt: 'Agent Newsletters — glowing scrolls radiating from a central star' },
+  },
 ]
 
 export const gardenProjects: GardenProject[] = [
