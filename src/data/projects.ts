@@ -116,8 +116,11 @@ export const headliners: HeadlinerProject[] = [
 ]
 
 export const gardenProjects: GardenProject[] = [
-  { id: 'southernsky',  title: 'SouthernSky',          description: 'Cloud platform, customer portal & intelligent software suite', color: '#3fb950', url: 'https://southernsky.cloud' },
-  { id: 'market-data',  title: 'Market Data Service',   description: 'Market sentiment API, newsletter engine & signal feed',        color: '#EF4444' },
-  { id: 'starcatcher',  title: 'Star Catcher',          description: 'Web game — cosmic leap (WIP)',                                 color: '#06B6D4', url: 'https://stankydanko.github.io/star-catcher' },
-  { id: 'video-fx',     title: 'video-fx',              description: 'Selective face recognition + privacy blurring pipeline',        color: '#EC4899' },
+  { id: 'southernsky',    title: 'SouthernSky',              description: 'Cloud platform, customer portal & intelligent software suite',                                          color: '#3fb950', url: 'https://southernsky.cloud' },
+  { id: 'market-data',    title: 'Market Data Service',      description: 'Market sentiment API, newsletter engine & signal feed',                                                  color: '#EF4444' },
+  { id: 'astrosight',     title: 'AstroSight',               description: "\u201CMillionaires don't use astrology. Billionaires do.\u201D \u2014 attributed to J.P. Morgan. A $20/mo newsletter reading the markets through the planets.", color: '#8B5CF6' },
+  { id: 'gmail-poweruser', title: 'Gmail PowerUser',          description: 'Self-hosted Gmail dashboard \u2014 AI summaries, smart bundles, attachment vault, one-click cleanup. $49 one-time, no subscription.', color: '#EA4335' },
+  { id: 'tactical-id',    title: 'Tactical ID Management',   description: 'Cinematic face tracking + selective privacy blurring for video. TRACKING \u2192 TARGET ACQUIRED \u2192 ERASE IDENTITY.',              color: '#EC4899' },
+  { id: 'distilligent',   title: 'Distilligent',             description: 'The Apothecary for AI Alchemists. A curated library of Proompts \u2014 potions for your LLM conversations.',                         color: '#06B6D4' },
+  { id: 'starcatcher',    title: 'Star Catcher',             description: 'Web game \u2014 cosmic leap (WIP)',                                                                       color: '#14B8A6', url: 'https://stankydanko.github.io/star-catcher' },
 ]
