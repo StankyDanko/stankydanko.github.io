@@ -6,7 +6,7 @@ StankyDanko is Justin's personal portfolio and creative showcase. A dark, synthw
 
 | | |
 |---|---|
-| **Live URL** | https://stankydanko.github.io/StankyDanko/ |
+| **Live URL** | https://stankydanko.github.io/ |
 | **Deployment** | GitHub Pages (auto-deploy on push to main via GitHub Actions) |
 | **Repo** | https://github.com/StankyDanko/StankyDanko |
 
