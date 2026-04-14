@@ -22,6 +22,8 @@ export default function App() {
   const cairn = headliners[4]
   const justinContext = headliners[5]
   const zenotype = headliners[6]
+  const ukko = headliners[7]
+  const agentNewsletters = headliners[8]
 
   return (
     <div className="min-h-screen pb-16">
@@ -55,6 +57,10 @@ export default function App() {
           <HeadlinerCard project={zenotype}>
             <ZenoTypeDemo />
           </HeadlinerCard>
+
+          <HeadlinerCard project={ukko} />
+
+          <HeadlinerCard project={agentNewsletters} />
         </section>
       </div>
 
