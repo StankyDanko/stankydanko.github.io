@@ -100,6 +100,19 @@ export const headliners: HeadlinerProject[] = [
       { label: 'GitHub', url: 'https://github.com/StankyDanko/ZenoType' },
     ],
   },
+  {
+    id: 'ukko',
+    title: 'UKKO',
+    subtitle: 'Your Noita Dungeon Master',
+    description: "A local Dungeon Master for your Noita run. Ukko reads your save, watches through a Lua mod, and — when you ask — calls his peek tools to tell you exactly what's in the next Holy Mountain, what the shop will roll, what the wand will spawn as. Byte-exact against Noita's own RNG. Then he talks it through with you in the voice of the bastard at the starting hut bar. 312 deaths of experience. Runs locally on your machine. No cloud, no account.",
+    color: '#84cc16',
+    tags: ['PRE-RELEASE', 'Python', 'AI', 'Game Tool'],
+    links: [
+      { label: 'Support the Build →', url: 'https://www.gofundme.com/', primary: true },
+      { label: 'GitHub', url: 'https://github.com/StankyDanko/noita-dm' },
+    ],
+    media: { type: 'image', src: '/images/ukko-hero.png', alt: 'Ukko — pixel-art grizzled Finnish wizard in a dim cave' },
+  },
 ]
 
 export const gardenProjects: GardenProject[] = [
