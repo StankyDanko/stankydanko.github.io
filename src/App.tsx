@@ -23,7 +23,9 @@ export default function App() {
   const justinContext = headliners[5]
   const zenotype = headliners[6]
   const ukko = headliners[7]
-  const agentNewsletters = headliners[8]
+  const player2 = headliners[8]
+  const mutinysmp = headliners[9]
+  const agentNewsletters = headliners[10]
 
   return (
     <div className="min-h-screen pb-16">
@@ -59,6 +61,10 @@ export default function App() {
           </HeadlinerCard>
 
           <HeadlinerCard project={ukko} />
+
+          <HeadlinerCard project={player2} />
+
+          <HeadlinerCard project={mutinysmp} />
 
           <HeadlinerCard project={agentNewsletters} />
         </section>

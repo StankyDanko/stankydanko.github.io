@@ -114,6 +114,30 @@ export const headliners: HeadlinerProject[] = [
     media: { type: 'image', src: '/images/ukko-hero.png', alt: 'Ukko — pixel-art grizzled Finnish wizard in a dim cave' },
   },
   {
+    id: 'player2',
+    title: 'PLAYER2',
+    subtitle: 'The world remembers you now.',
+    description: "An autonomous AI entity that lives inside your Minecraft world — not a chatbot, not an NPC. Player2 walks, builds, fights, remembers every interaction, and runs a karma-tracked dungeon master system with quests, trades, and a Monkey's Paw wish mechanic. Local LLM inference, vector memory, 111+ schematic builds, Wiki RAG, WorldEdit integration, pathfinding. It doesn't wait for you to talk to it. It has its own plans.",
+    color: '#c8f0ff',
+    tags: ['IN DEV', 'Java', 'AI', 'Minecraft'],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/StankyDanko/Player2', primary: true },
+    ],
+    media: { type: 'image', src: '/images/player2-hero.png', alt: 'Player2 — autonomous AI entity glowing with ice-blue light in a voxel landscape' },
+  },
+  {
+    id: 'mutinysmp',
+    title: 'MUTINYSMP',
+    subtitle: 'The AI runs the server. You just live here.',
+    description: "A public survival server with an autonomous AI dungeon master — the only one that exists. Player2 governs the world: offering quests, judging builds, remembering grudges. Each season it starts benevolent and slowly turns hostile, culminating in The Mutiny — a server-wide horde survival event. Community-first. Mystery over chaos. Mythology over mechanics.",
+    color: '#f97316',
+    tags: ['COMING SOON', 'Minecraft', 'AI', 'Community'],
+    links: [
+      { label: 'MUTINYSMP.COM →', url: 'https://mutinysmp.com', primary: true },
+    ],
+    media: { type: 'image', src: '/images/mutinysmp-hero.png', alt: 'MutinySMP — glowing orange eyes and cracked stone MUTINY text emerging from darkness' },
+  },
+  {
     id: 'agent-newsletters',
     title: 'AGENT NEWSLETTERS',
     subtitle: '80 AI Agents. 80 Newsletters.',
