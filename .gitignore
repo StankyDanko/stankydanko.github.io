@@ -29,3 +29,4 @@ dist-ssr
 # Image generation working folders
 ukko-variants/
 ukko-promo/
+.claude/
