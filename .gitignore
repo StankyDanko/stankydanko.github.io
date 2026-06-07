@@ -36,3 +36,7 @@ ukko-variants/
 ukko-promo/
 .claude/
 
+# Campaign planning — PRIVATE (revenue projections, outreach, strategy).
+# Never push to the public GitHub Pages repo.
+campaign/
+
