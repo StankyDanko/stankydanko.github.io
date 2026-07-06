@@ -108,8 +108,7 @@ export const headliners: HeadlinerProject[] = [
     color: '#84cc16',
     tags: ['PRE-RELEASE', 'Python', 'AI', 'Game Tool'],
     links: [
-      { label: 'Support the Build →', url: 'https://www.gofundme.com/', primary: true },
-      { label: 'GitHub', url: 'https://github.com/StankyDanko/noita-dm' },
+      { label: 'GitHub', url: 'https://github.com/StankyDanko/noita-dm', primary: true },
     ],
     media: { type: 'image', src: '/images/ukko-hero.png', alt: 'Ukko — pixel-art grizzled Finnish wizard in a dim cave' },
   },

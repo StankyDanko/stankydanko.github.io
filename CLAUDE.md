@@ -8,7 +8,7 @@ StankyDanko is Justin's personal portfolio and creative showcase. A dark, synthw
 |---|---|
 | **Live URL** | https://stankydanko.github.io/ |
 | **Deployment** | GitHub Pages (auto-deploy on push to main via GitHub Actions) |
-| **Repo** | https://github.com/StankyDanko/StankyDanko |
+| **Repo** | https://github.com/StankyDanko/stankydanko.github.io |
 
 ## Tech Stack
 
@@ -90,12 +90,26 @@ Font: JetBrains Mono throughout (monospace aesthetic).
 - Named exports for components
 - TypeScript strict mode
 
-## Headliner Projects
+## Headliner Projects (11, source of truth `src/data/projects.ts` → `headliners`)
 
 1. **Naptime's Over** — Heavy metal nursery rhymes album (17 tracks, playable in-app)
 2. **OMNI** — Intelligence operating system (links to omni.southernsky.cloud)
-3. **ZenoType** — AI typing coach (links to https://stankydanko.github.io/ZenoType/)
+3. **SaySee** — Multimodal footage vision
+4. **SouthernSky Chat**
+5. **Cairn** — Speech vs. ambient audio classifier
+6. **JustIn Context** — Documentary
+7. **ZenoType** — AI typing coach (links to https://stankydanko.github.io/ZenoType/)
+8. **Ukko** — Noita Dungeon Master (pre-release; GitHub link)
+9. **Player2** — AI dungeon master mod for Minecraft
+10. **MutinySMP** — The Minecraft world
+11. **Agent Newsletters**
 
-## Garden Projects
+> Keep this list in sync with `src/data/projects.ts`; don't hand-count — the array is the truth.
 
-- SouthernSky, Star Catcher (web game), video-fx, Local AI Rig
+## Garden Projects (7, source of truth `src/data/projects.ts` → `gardenProjects`)
+
+- SouthernSky, Market Data Service, AstroSight, Gmail PowerUser, Tactical ID Management, Distilligent, Star Catcher
+
+## Private / working dirs (gitignored — never pushed to the public Pages repo)
+
+`campaign/` (funding strategy), `karaoke/` (generated media, 189MB), `grok-images/` / `gemini-images/` / `ukko-variants/` / `ukko-promo/` (image-gen working folders).

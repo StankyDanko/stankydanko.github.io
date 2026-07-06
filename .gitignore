@@ -34,7 +34,15 @@ dist-ssr
 # Image generation working folders
 ukko-variants/
 ukko-promo/
+grok-images/
+gemini-images/
 .claude/
+
+# Generated media output (large — never push to the public Pages repo)
+karaoke/
+
+# Housekeeping audit report — internal, keep out of the public repo
+AUDIT.md
 
 # Campaign planning — PRIVATE (revenue projections, outreach, strategy).
 # Never push to the public GitHub Pages repo.
