@@ -148,6 +148,37 @@ export const headliners: HeadlinerProject[] = [
     ],
     media: { type: 'image', src: '/images/agent-newsletters-hero.png', alt: 'Agent Newsletters — glowing scrolls radiating from a central star' },
   },
+  {
+    id: 'brickbybrick',
+    title: 'BRICKBYBRICK.GG',
+    subtitle: 'The Arcade — A Game For Every Track',
+    description: "A browser arcade where every song from Naptime's Over becomes a game you can play — no download, no login, no account. Just click a link and you're in. Itsy Bitsy is live and polished right now; the rest of the roster is building out one track at a time. Hear the heavy-metal nursery rhyme, then play it.",
+    color: '#EC4899',
+    tags: ['LIVE', 'Arcade', 'Web Games'],
+    links: [
+      { label: 'BRICKBYBRICK.GG →', url: 'https://brickbybrick.gg', primary: true },
+      { label: 'Play Itsy Bitsy →', url: 'https://brickbybrick.gg/itsy-bitsy/' },
+    ],
+    media: { type: 'image', src: '/images/brickbybrick-hero.jpg', alt: 'brickbybrick.gg arcade — neon cabinet glow over a grid of playable games' },
+  },
+  {
+    id: 'cloud-gpu',
+    title: 'CLOUD GPU ON DEMAND',
+    subtitle: 'Rent Serious Compute — By The Hour',
+    description: "Elastic cloud GPU power, summoned only when the work demands it. When a job needs real muscle — AI image and video generation, 3D rendering, heavy model work — I spin up the biggest hardware available, run the work at full tilt, and switch it off. No idle rig gathering dust: the datacenter becomes the workshop for exactly as long as the render takes, then vanishes.",
+    color: '#22D3EE',
+    tags: ['CAPABILITY', 'GPU', 'Cloud Compute'],
+    media: { type: 'image', src: '/images/runpod-hero.jpg', alt: 'Abstract GPU compute cluster dissolving into cyan neon light against a dark synthwave field' },
+  },
+  {
+    id: 'messaging-engine',
+    title: 'MESSAGING ENGINE',
+    subtitle: 'Programmatic Messaging & Communications',
+    description: "The communications layer behind everything I build. Send and receive text at scale, run compliant SMS campaigns, and wire phone and notification flows into any project — so an app can actually reach the people who use it. This is the messaging engine that lets a product talk to the outside world instead of just living on a screen.",
+    color: '#D946EF',
+    tags: ['CAPABILITY', 'SMS', 'Comms'],
+    media: { type: 'image', src: '/images/twilio-hero.jpg', alt: 'Abstract global signal network of magenta neon nodes connected by streaking light across a dark horizon' },
+  },
 ]
 
 export const gardenProjects: GardenProject[] = [
