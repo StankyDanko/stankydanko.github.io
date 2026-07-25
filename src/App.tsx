@@ -26,6 +26,9 @@ export default function App() {
   const player2 = headliners[8]
   const mutinysmp = headliners[9]
   const agentNewsletters = headliners[10]
+  const brickbybrick = headliners[11]
+  const stankydankoIdent = headliners[12]
+  const dankmireHomebase = headliners[13]
 
   return (
     <div className="min-h-screen pb-16">
@@ -67,6 +70,12 @@ export default function App() {
           <HeadlinerCard project={mutinysmp} />
 
           <HeadlinerCard project={agentNewsletters} />
+
+          <HeadlinerCard project={brickbybrick} />
+
+          <HeadlinerCard project={stankydankoIdent} />
+
+          <HeadlinerCard project={dankmireHomebase} />
         </section>
       </div>
 

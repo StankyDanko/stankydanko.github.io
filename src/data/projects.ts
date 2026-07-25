@@ -148,6 +148,37 @@ export const headliners: HeadlinerProject[] = [
     ],
     media: { type: 'image', src: '/images/agent-newsletters-hero.png', alt: 'Agent Newsletters — glowing scrolls radiating from a central star' },
   },
+  {
+    id: 'brickbybrick',
+    title: 'BRICKBYBRICK.GG',
+    subtitle: 'The Arcade — A Game For Every Track',
+    description: "A browser arcade where every song from Naptime's Over becomes a game you can play — no download, no login, no account. Just click a link and you're in. Itsy Bitsy is live and polished right now; the rest of the roster is building out one track at a time. Hear the heavy-metal nursery rhyme, then play it.",
+    color: '#EC4899',
+    tags: ['LIVE', 'Arcade', 'Web Games'],
+    links: [
+      { label: 'BRICKBYBRICK.GG →', url: 'https://brickbybrick.gg', primary: true },
+      { label: 'Play Itsy Bitsy →', url: 'https://brickbybrick.gg/itsy-bitsy/' },
+    ],
+    media: { type: 'image', src: '/images/brickbybrick-hero.jpg', alt: 'brickbybrick.gg arcade — neon cabinet glow over a grid of playable games' },
+  },
+  {
+    id: 'stankydanko-ident',
+    title: 'THE STANKYDANKO IDENT',
+    subtitle: 'Cinema-Style Studio Logo — Built in Blender',
+    description: "The studio opener that plays before the work — a Hollywood-style logo animation reimagined for StankyDanko, with a spinning globe reveal and an original orchestral fanfare scored to picture. Modeled, lit, and rendered entirely as code in Blender on the home rig. The kind of polish that makes everything downstream look finished.",
+    color: '#06B6D4',
+    tags: ['RENDERED', 'Blender', 'Motion Graphics'],
+    media: { type: 'video', src: '/video/stankydanko-ident.mp4', alt: 'The STANKYDANKO ident — animated studio logo with a spinning globe reveal' },
+  },
+  {
+    id: 'dankmire-homebase',
+    title: 'DANKMIRE · HOMEBASE',
+    subtitle: 'One Dashboard Runs the Whole Studio',
+    description: "The operating layer behind everything else on this page. A single dashboard — everything under one roof — that runs video editing, music production, image and video generation, and live system health from one screen, orchestrated end to end. This is how one person runs an entire creative studio, and keeps it running even offline.",
+    color: '#4ADE80',
+    tags: ['STUDIO', 'Dashboard', 'Self-Hosted'],
+    media: { type: 'image', src: '/images/homebase-hero.png', alt: 'dankMire Homebase — a dark dashboard reading everything under one roof over a grid of studio tools' },
+  },
 ]
 
 export const gardenProjects: GardenProject[] = [
